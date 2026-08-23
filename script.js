@@ -8,7 +8,6 @@ const galleryClose = document.querySelector('[data-gallery-close]');
 const galleryTrack = document.querySelector('[data-gallery-track]');
 const galleryPrev = document.querySelector('[data-gallery-prev]');
 const galleryNext = document.querySelector('[data-gallery-next]');
-const heroVideo = document.querySelector('.hero-video');
 
 const setHeader = () => header?.classList.toggle('scrolled', window.scrollY > 24);
 setHeader();
@@ -27,28 +26,29 @@ navToggle?.addEventListener('click', () => {
 
 navLinks.forEach(link => link.addEventListener('click', closeNav));
 
-// Keep the hero black until the local trailer has enough data to play,
-// then fade it in so there is no flash of a fallback image.
-const showHeroVideo = () => heroVideo?.classList.add('is-ready');
-if (heroVideo) {
-  if (heroVideo.readyState >= 3) {
-    showHeroVideo();
-  } else {
-    heroVideo.addEventListener('canplay', showHeroVideo, { once: true });
-  }
-}
-
 const openGallery = () => {
   if (!galleryModal) return;
   closeNav();
-  galleryModal.showModal();
+
+  if (typeof galleryModal.showModal === 'function') {
+    if (!galleryModal.open) galleryModal.showModal();
+  } else {
+    galleryModal.setAttribute('open', '');
+  }
+
   document.body.classList.add('modal-open');
   requestAnimationFrame(() => galleryTrack?.focus({ preventScroll: true }));
 };
 
 const closeGallery = () => {
-  if (!galleryModal?.open) return;
-  galleryModal.close();
+  if (!galleryModal) return;
+
+  if (typeof galleryModal.close === 'function' && galleryModal.open) {
+    galleryModal.close();
+  } else {
+    galleryModal.removeAttribute('open');
+    document.body.classList.remove('modal-open');
+  }
 };
 
 galleryOpenButtons.forEach(button => button.addEventListener('click', openGallery));
