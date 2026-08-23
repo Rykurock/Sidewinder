@@ -38,14 +38,17 @@
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-media" aria-hidden="true">
-        <iframe
+        <video
           class="hero-video"
-          src="https://www.youtube-nocookie.com/embed/LpPsb0iVCd8?autoplay=1&mute=1&controls=0&loop=1&playlist=LpPsb0iVCd8&playsinline=1&rel=0&disablekb=1&iv_load_policy=3"
-          title=""
-          tabindex="-1"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allow="autoplay; encrypted-media; picture-in-picture"
-        ></iframe>
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="assets/desert-ride.webp"
+        >
+          <source src="assets/sidewinder-trailer.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="hero-shade"></div>
       <div class="hero-content reveal">
