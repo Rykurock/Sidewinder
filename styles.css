@@ -655,11 +655,72 @@ body.modal-open { overflow: hidden; }
 }
 
 @media (max-width: 520px) {
-  .hero-content, .section, .follow-content, .site-footer { width:min(100% - 1.5rem, var(--max)); }
-  .site-header { padding:0 .8rem; }
-  .hero h1 { font-size: clamp(4.4rem, 23vw, 7rem); }
-  .hero-actions, .follow-actions { flex-direction:column; }
-  .button { width:100%; }
+  .hero {
+    min-height: 112svh;
+  }
+
+  /* On phones, zoom the 16:9 trailer further into the portrait viewport.
+     The horizontal edges are intentionally cropped so the moving image
+     fills more of the tall hero instead of feeling letterboxed/distant. */
+  .hero-video {
+    inset: -8% -16%;
+    width: 132%;
+    height: 116%;
+    max-width: none;
+    object-fit: cover;
+    object-position: 52% center;
+  }
+
+  .hero-shade {
+    background:
+      linear-gradient(90deg, rgba(4,5,11,.84), rgba(4,5,11,.48) 72%, rgba(4,5,11,.28)),
+      linear-gradient(0deg, rgba(4,5,11,.88) 0%, rgba(4,5,11,.28) 48%, rgba(4,5,11,.22) 100%);
+  }
+
+  .hero-content, .section, .follow-content, .site-footer {
+    width: min(100% - 1.5rem, var(--max));
+  }
+
+  .site-header { padding: 0 .8rem; }
+
+  .hero-content {
+    align-self: center;
+    padding-top: calc(var(--header-h) + 2.75rem);
+    padding-bottom: 3rem;
+  }
+
+  /* Keep the title inside the viewport. The previous 23vw size was
+     wider than a phone screen and caused SIDEWINDER to be clipped. */
+  .hero h1 {
+    width: 100%;
+    white-space: nowrap;
+    font-size: clamp(3.7rem, 18.4vw, 5.6rem);
+    line-height: .84;
+    letter-spacing: -.045em;
+  }
+
+  .hero-logline {
+    margin-top: 1.4rem;
+    font-size: .96rem;
+  }
+
+  .hero-synopsis {
+    max-width: 100%;
+    font-size: .96rem;
+    line-height: 1.55;
+  }
+
+  .hero-actions, .follow-actions {
+    flex-direction: column;
+    gap: .65rem;
+    margin-top: 1.5rem;
+  }
+
+  .button {
+    width: 100%;
+    min-height: 46px;
+  }
+
   .trailer-links { align-items:flex-start; flex-direction:column; gap:.35rem; }
   .film-meta { grid-template-columns:1fr; }
   .screening-card { min-height:300px; }
