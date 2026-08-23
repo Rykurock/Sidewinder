@@ -14,13 +14,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/branding/favicon-192.png" />
+  <link rel="apple-touch-icon" href="assets/branding/favicon-192.png" />
+  <meta name="apple-mobile-web-app-title" content="Sidewinder" />
   <link rel="stylesheet" href="styles.css?v=20260823-3" />
+  <link rel="stylesheet" href="branding.css?v=20260823-1" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="Sidewinder home">SIDEWINDER</a>
+    <a class="brand brand-lockup" href="#top" aria-label="Sidewinder home">
+      <img class="brand-studio-mark" src="assets/branding/clay-lacey-films-logo.png" alt="" />
+      <img class="brand-wordmark" src="assets/branding/sidewinder-logo.png" alt="Sidewinder" />
+    </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
       <span></span><span></span><span></span>
       <span class="sr-only">Toggle navigation</span>
@@ -52,7 +59,7 @@
       <div class="hero-shade"></div>
       <div class="hero-content reveal">
         <p class="eyebrow">A film by Clay Lacey</p>
-        <h1 id="hero-title">SIDEWINDER</h1>
+        <h1 id="hero-title" class="hero-title-logo"><img src="assets/branding/sidewinder-logo.png" alt="" /><span class="sr-only">SIDEWINDER</span></h1>
         <p class="hero-logline">One mistake. No way back.</p>
         <p class="hero-synopsis">When a desert getaway turns tragic after a fatal hit-and-run, two estranged sisters must cover up the crime while being targeted by law enforcement and a mysterious stalker.</p>
         <div class="hero-actions">
@@ -344,8 +351,15 @@
   </dialog>
 
   <footer class="site-footer">
-    <a class="brand footer-brand" href="#top">SIDEWINDER</a>
-    <p>A film by Clay Lacey.</p>
+    <div class="footer-branding">
+      <a class="footer-sidewinder-logo" href="#top" aria-label="Sidewinder home">
+        <img src="assets/branding/sidewinder-logo.png" alt="Sidewinder" />
+      </a>
+      <div class="footer-production">
+        <img src="assets/branding/clay-lacey-films-logo.png" alt="Clay Lacey Films" />
+        <span>A Clay Lacey Films production</span>
+      </div>
+    </div>
     <p class="footer-note">© <span id="year"></span> Clay Lacey Films. All rights reserved.</p>
   </footer>
 
