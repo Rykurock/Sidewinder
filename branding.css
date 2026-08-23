@@ -1,0 +1,104 @@
+/* Official Sidewinder / Clay Lacey Films branding */
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+.brand-studio-mark {
+  display: block;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+.brand-wordmark {
+  display: block;
+  width: clamp(145px, 13vw, 215px);
+  height: auto;
+}
+
+.hero-title-logo {
+  margin: 0;
+  width: min(920px, 82vw);
+  font-size: 0;
+  line-height: 1;
+}
+.hero-title-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 14px 40px rgba(0,0,0,.38));
+}
+
+.site-footer {
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+}
+.footer-branding {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  min-width: 0;
+}
+.footer-sidewinder-logo {
+  display: block;
+  width: clamp(210px, 26vw, 340px);
+}
+.footer-sidewinder-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.footer-production {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  padding-left: clamp(1rem, 2vw, 1.75rem);
+  border-left: 1px solid var(--line);
+}
+.footer-production img {
+  display: block;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+.footer-production span {
+  max-width: 150px;
+  color: rgba(244,239,230,.48);
+  font-size: .66rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.footer-note {
+  grid-column: auto;
+  grid-row: auto;
+  text-align: right;
+}
+
+@media (max-width: 880px) {
+  .site-footer { grid-template-columns: 1fr; }
+  .footer-branding { justify-content: space-between; }
+  .footer-note { margin-top: .25rem !important; text-align: left; }
+}
+
+@media (max-width: 520px) {
+  .brand-studio-mark { width: 36px; height: 36px; }
+  .brand-wordmark { width: min(48vw, 185px); }
+  .hero-title-logo { width: 100%; max-width: 100%; }
+  .footer-branding {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .footer-sidewinder-logo { width: min(82vw, 300px); }
+  .footer-production {
+    padding-left: 0;
+    border-left: 0;
+    gap: .7rem;
+  }
+  .footer-production img { width: 54px; height: 54px; }
+}
