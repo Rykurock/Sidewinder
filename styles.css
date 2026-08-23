@@ -102,13 +102,27 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero-media {
   position: absolute;
   inset: 0;
-  background-image: url("assets/desert-ride.webp");
-  background-size: cover;
-  background-position: center 47%;
-  transform: scale(1.02);
-  animation: drift 18s ease-in-out infinite alternate;
+  overflow: hidden;
+  background:
+    #04050b url("assets/desert-ride.webp") center 47% / cover no-repeat;
 }
-@keyframes drift { to { transform: scale(1.07) translateX(-.8%); } }
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 100vw;
+  height: 56.25vw;
+
+  min-width: 177.78vh;
+  min-height: 100vh;
+
+  border: 0;
+
+  transform: translate(-50%, -50%) scale(1.03);
+  pointer-events: none;
+}
 .hero-shade {
   position: absolute;
   inset: 0;
