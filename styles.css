@@ -122,10 +122,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   object-fit: cover;
   object-position: center;
   pointer-events: none;
-  opacity: 0;
-  transition: opacity .45s ease;
+  opacity: 1;
 }
-.hero-video.is-ready { opacity: 1; }
+
 .hero-shade {
   position: absolute;
   inset: 0;
@@ -370,7 +369,7 @@ h3 { margin: 0; font-size: clamp(1.7rem, 3vw, 2.35rem); line-height: 1.05; }
   position: relative;
   display: grid;
   place-items: center;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   color: rgba(229,177,6,.24);
   background:
@@ -398,7 +397,22 @@ h3 { margin: 0; font-size: clamp(1.7rem, 3vw, 2.35rem); line-height: 1.05; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 35%;
+  filter: saturate(.82) contrast(1.06);
+  transform: scale(1.01);
 }
+.cast-portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 58%, rgba(4,5,11,.38) 100%);
+}
+.cast-portrait-krystin img { object-position: center 38%; }
+.cast-portrait-brookelynn img { object-position: center 32%; }
+.cast-portrait-aaron img { object-position: center 40%; }
+.cast-portrait-brad img { object-position: center 30%; }
+.cast-portrait-nita img { object-position: center 30%; filter: saturate(.72) contrast(1.1); }
 .cast-copy { padding: 1.5rem 1.5rem 1.8rem; }
 .cast-role, .crew-role {
   margin: 0 0 .55rem;
@@ -437,7 +451,7 @@ h3 { margin: 0; font-size: clamp(1.7rem, 3vw, 2.35rem); line-height: 1.05; }
 .crew-heading { max-width: 720px; }
 .crew-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1px;
   margin-top: 2.5rem;
   background: var(--line);
@@ -452,6 +466,41 @@ h3 { margin: 0; font-size: clamp(1.7rem, 3vw, 2.35rem); line-height: 1.05; }
 }
 .crew-card h3 { margin: 0; font-size: clamp(1.65rem, 3vw, 2.4rem); }
 .crew-card > p:not(.crew-role) { color: var(--muted); font-size: .92rem; }
+.crew-card-director {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr);
+  min-height: 0;
+  padding: 0;
+}
+.crew-portrait {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+  background: #05070b;
+}
+.crew-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  filter: saturate(.8) contrast(1.07);
+}
+.crew-portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(4,5,11,.28));
+  pointer-events: none;
+}
+.crew-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 5vw, 4.5rem);
+}
+.crew-copy > p:not(.crew-role) { color: var(--muted); font-size: .96rem; max-width: 640px; }
 
 body.modal-open { overflow: hidden; }
 .gallery-modal {
@@ -595,8 +644,10 @@ body.modal-open { overflow: hidden; }
   .trailer-heading { grid-template-columns:1fr; gap:1rem; }
   .poster-card { max-width: 520px; margin: 0 auto; }
   .screening-grid, .cast-grid-featured, .cast-grid-supporting, .crew-grid { grid-template-columns:1fr; }
-  .cast-portrait { aspect-ratio: 16 / 9; }
+  .cast-portrait { aspect-ratio: 4 / 5; }
   .crew-card { min-height:0; }
+  .crew-card-director { grid-template-columns: 1fr; }
+  .crew-portrait { min-height: 0; aspect-ratio: 4 / 5; border-right: 0; border-bottom: 1px solid var(--line); }
   .gallery-track { grid-auto-columns: 94%; }
   .screening-follow { align-items:flex-start; flex-direction:column; gap:.5rem; }
   .site-footer { grid-template-columns:1fr; }
