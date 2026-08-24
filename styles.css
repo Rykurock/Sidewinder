@@ -656,8 +656,6 @@ body.modal-open { overflow: hidden; }
 
 @media (max-width: 520px) {
   .hero {
-    min-height: 112vh;
-    height: 112vh;
     min-height: 112lvh;
     height: 112lvh;
   }
