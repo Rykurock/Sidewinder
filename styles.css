@@ -656,19 +656,28 @@ body.modal-open { overflow: hidden; }
 
 @media (max-width: 520px) {
   .hero {
-    min-height: 112svh;
+    min-height: 112vh;
+    height: 112vh;
+    min-height: 112lvh;
+    height: 112lvh;
   }
 
-  /* On phones, zoom the 16:9 trailer further into the portrait viewport.
-     The horizontal edges are intentionally cropped so the moving image
-     fills more of the tall hero instead of feeling letterboxed/distant. */
   .hero-video {
-    inset: -8% -16%;
-    width: 132%;
-    height: 116%;
-    max-width: none;
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
     object-fit: cover;
     object-position: 52% center;
+
+    /* Keep the tighter cinematic crop we wanted on phones */
+    transform: scale(1.12);
+    transform-origin: center;
+
+    max-width: none;
+    pointer-events: none;
   }
 
   .hero-shade {
