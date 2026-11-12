@@ -32,7 +32,7 @@
   <link rel="apple-touch-icon" href="assets/branding/favicon-192.png" />
   <meta name="apple-mobile-web-app-title" content="Sidewinder" />
 
-  <link rel="stylesheet" href="styles.css?v=20260824-1" />
+  <link rel="stylesheet" href="styles.css?v=20261111-1" />
   <link rel="stylesheet" href="branding.css?v=20260823-1" />
 </head>
 
@@ -136,7 +136,7 @@
             class="button button-ghost"
             href="#screenings"
           >
-            Screenings coming soon
+            Screenings & tickets
           </a>
 
           <a
@@ -157,6 +157,18 @@
       >
         <span></span>
       </a>
+    </section>
+
+    <!-- FESTIVAL OFFICIAL SELECTION -->
+    <section class="festival-announcement" aria-labelledby="festival-announcement-title">
+      <div class="festival-announcement-inner">
+        <div>
+          <p class="eyebrow">Official Selection · 2026</p>
+          <h2 id="festival-announcement-title">Los Angeles Crime and Horror Film Festival</h2>
+          <p>November 22, 2026 · Sherry Theater · North Hollywood</p>
+        </div>
+        <a class="button button-primary" href="#festival-screening">Screening &amp; tickets</a>
+      </div>
     </section>
 
     <!-- STATUS BAR -->
@@ -315,12 +327,32 @@
         </h2>
 
         <p>
-          Two screenings are planned. Dates, venues, showtimes,
-          and ticket details will be announced once confirmed.
+          Join us at the 2026 Los Angeles Crime and Horror Film Festival.
+          Additional screening plans are listed below; details will be announced once confirmed.
         </p>
       </div>
 
       <div class="screening-grid">
+        <article class="screening-card festival-screening reveal" id="festival-screening" aria-labelledby="festival-screening-title">
+          <p class="eyebrow">Official Selection · 2026</p>
+          <h3 id="festival-screening-title">Los Angeles Crime and Horror Film Festival</h3>
+          <p class="screening-date">
+            <time datetime="2026-11-22">November 22, 2026</time>
+            · Block E · Block starts at
+            <time datetime="2026-11-22T19:10:00-08:00">7:10 PM PST</time>
+          </p>
+          <address>
+            <strong>Sherry Theater</strong><br />
+            11052 Magnolia Blvd<br />
+            North Hollywood, CA 91601
+          </address>
+          <p>Select Block E on FilmFreeway. The time above is the published block start;
+            check the festival program for individual film times and schedule updates.</p>
+          <a class="button button-primary"
+            href="https://filmfreeway.com/LA-Crime-Horror-Film-Festival/tickets"
+            target="_blank" rel="noopener noreferrer">Buy tickets <span class="sr-only">for Block E on FilmFreeway (opens in a new tab)</span></a>
+        </article>
+
         <article class="screening-card reveal">
           <div class="screening-number">
             01
