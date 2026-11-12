@@ -1722,3 +1722,40 @@ body.modal-open {
     width: calc(100% - 1.5rem);
   }
 }
+
+/* Festival artwork and single confirmed screening */
+.festival-screening-with-art {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.festival-art {
+  margin: 0;
+  min-width: 0;
+}
+
+.festival-art img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+}
+
+.festival-screening-copy {
+  min-width: 0;
+}
+
+.festival-screening-copy address {
+  font-style: normal;
+}
+
+.festival-screening-copy > p:not(.eyebrow):not(.screening-date) {
+  color: var(--muted);
+}
+
+@media (max-width: 880px) {
+  .festival-screening-with-art {
+    grid-template-columns: 1fr;
+  }
+}
